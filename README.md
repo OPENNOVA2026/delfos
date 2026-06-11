@@ -28,9 +28,8 @@ In order to run this service, you need.
 
 Config .json file must have this form:
 ```javascript
-[
-    {
-      "id": 1,
+{
+  "1": {
       "description": "Some description",
       "news_origin": [
         {
@@ -42,7 +41,7 @@ Config .json file must have this form:
       "skip_urls": [],
       "trend_filter": ["filters", "from", "google", "trends"]
     }
-]
+}
 ```
 
 The config id to use should be indicated as env var.
