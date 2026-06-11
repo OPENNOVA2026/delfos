@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "delfos"
 version = "0.1.0"
-description = ""
+description = "Service to detect information voids"
 authors = [
     "David Leirado Maroto <https://github.com/DavidLeirado>",
     "Oscar Delgado <https://github.com/oscar-delgado>",
