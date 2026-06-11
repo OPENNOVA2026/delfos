@@ -1,0 +1,69 @@
+[tool.poetry]
+name = "delfos"
+version = "0.1.0"
+description = ""
+authors = [
+    "David Leirado Maroto <https://github.com/DavidLeirado>",
+    "Oscar Delgado <https://github.com/oscar-delgado>",
+    "Fran Melchor <https://github.com/franjmelchor>"
+    ]
+readme = "README.md"
+package-mode=false
+
+[tool.poetry.dependencies]
+python = "3.10.16"
+langchain-openai = "^0.3.27"
+langgraph = "^0.5.1"
+langchain = {extras = ["openai"], version = "^0.3.26"}
+newspaper3k = "^0.2.8"
+lxml-html-clean = "^0.4.2"
+rich = "^14.0.0"
+celery = "^5.5.3"
+kombu = {extras = ["amazon"], version = "^5.5.4"}
+cloudscraper = "^1.2.71"
+google-search-results = "^2.4.2"
+sentry-sdk = "^2.44.0"
+boto3 = "^1.40.71"
+pydantic-settings = "^2.13.0"
+
+
+[tool.poetry.group.dev.dependencies]
+watchdog = "^6.0.0"
+ruff = "^0.12.7"
+pytest = "^8.4.2"
+pytest-cov = "^7.0.0"
+pytest-mock = "^3.15.1"
+
+[tool.pytest.ini_options]
+addopts = "--cov=src --cov-report=term-missing"
+markers = []
+pythonpath = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+omit = [
+    "src/core/celery_app.py",
+    "src/core/celeryconfig.py",
+    "src/core/logger.py",
+    "*/__init__.py"
+]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 30
+
+[tool.ruff.lint]
+select = ["N", "E", "W", "F", "UP", "SIM", "I", "FAST"]
+
+[tool.ruff]
+extend-exclude = [
+    "tests/",
+    "src/domain/dataclasses.py",
+    "src/domain/email_managers/sections/",
+    "src/domain/spiders/gaceta_spider.py"
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

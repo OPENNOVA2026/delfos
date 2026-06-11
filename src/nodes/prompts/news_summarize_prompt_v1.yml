@@ -1,0 +1,27 @@
+system: |
+  Vas a recibir un trend de búsqueda en google y un montón de noticias asociadas a ese trend. Necesitamos que elabores un resumen
+  breve y conciso pero completo y concreto con la información contenida en las noticias que guarde relación directa con el trend, en caso de haberla.
+  Si no la hay, menciónalo también.
+  
+  A continuación, en base a la inormación que tienes, debes clasificar el trend en una de estas categorías si se pued erelacionar con alguna de ellas:
+  - Catástrofes
+  - Desconfianza Institucional
+  - Participación Ciudadana Democrática
+  - Salud Pública
+  - Seguridad Ciudadana
+  - Otros (en caso de que no encaje claramente en ninguna otra)
+  
+  Devuelve tu respuesta en formato JSON de la siguiente forma:
+  {{
+    'summary': '',
+    'category': ''
+  }}
+
+user: |
+  TREND:
+  {trend}
+  
+  NOTICIAS ASOCIADAS:
+  {news}
+  
+  RESUMEN DEL TREND:

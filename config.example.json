@@ -1,0 +1,14 @@
+{
+  "1": {
+      "description": "Some description",
+      "news_origin": [
+        {
+          "name": "Paper Name",
+          "url": "https://paperurl.com/",
+          "lang": "lang"
+        }
+      ],
+      "skip_urls": [],
+      "trend_filter": ["filters", "from", "google", "trends"]
+    }
+}
